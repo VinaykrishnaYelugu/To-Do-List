@@ -1,6 +1,5 @@
 let ipObj = document.querySelector("input");
 let add_btn = document.querySelector("#add_btn");
-let view_btn = document.querySelector("#view_btn");
 let ulObj = document.querySelector("ul");
 
 let new_task;
