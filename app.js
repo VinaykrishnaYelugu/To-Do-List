@@ -23,6 +23,7 @@ add_btn.addEventListener("click" , function(){
 
 
 ulObj.addEventListener("click", function(event){ 
+    let clkObj = event.target;
     if( clkObj.nodeName=='BUTTON' ){ 
         let parentObj = clkObj.parentElement; 
         let pObj = parentObj.querySelector("p");
