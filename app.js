@@ -17,27 +17,17 @@ add_btn.addEventListener("click" , function(){
     new_li.append(new_p);
     new_li.append(new_btn);
 
-//     new_btn.addEventListener("click" , function(){
-//         new_btn.className="";
-//         let remv_task = new_p.innerText.replace("Remove Task","");
-//         new_p.remove();
-//         new_btn.remove();
-//         new_li.remove();
-//         alert(`Removed ${remv_task} from To-Do-List !!`)
-//    } );
-
    ipObj.value = "";
    alert(`Added ${new_task} into To-Do-List !!`);
 });
 
 
-ulObj.addEventListener("click", function(event){ // using concept of Event Bubbling=> adding event listener to 'ul' Block
-    let clkObj = event.target; // event.target specifies the element that has been clicked in the event listener block('ul' Block )
-    if( clkObj.nodeName=='BUTTON' ){ // nodeName Specifies the target Object that has been clicked in the event listener block('ul' Block )
-        let parentObj = clkObj.parentElement;  //Accessing the 'li' element on which the remove button was clicked( li=> parent, clkObj=remove button=child)
+ulObj.addEventListener("click", function(event){ 
+    if( clkObj.nodeName=='BUTTON' ){ 
+        let parentObj = clkObj.parentElement; 
         let pObj = parentObj.querySelector("p");
         let remv_task = pObj.innerText;
-        parentObj.remove(); // Removing the respective 'li' element
+        parentObj.remove(); 
         alert(`Removed ${remv_task} from To-Do-List !!`)
     }
 });
