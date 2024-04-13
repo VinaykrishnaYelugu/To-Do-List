@@ -26,6 +26,7 @@ add_btn.addEventListener("click" , function(){
         new_li.remove();
         alert(`Removed ${remv_task} from To-Do-List !!`)
    } );
+   ipObj.value = "";
    alert(`Added ${new_task} into To-Do-List !!`);
 });
 
