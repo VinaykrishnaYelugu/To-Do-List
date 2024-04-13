@@ -17,16 +17,19 @@ add_btn.addEventListener("click" , function(){
     ulObj.appendChild( new_li );
     new_li.append(new_p);
     new_li.append(new_btn);
+    
+    ipObj.value = "";
+    alert(`Added '${new_task}' into To-Do-List !!`);
+});
 
-    new_btn.addEventListener("click" , function(){
-        new_btn.className="";
-        let remv_task = new_p.innerText.replace("Remove Task","");
-        new_p.remove();
-        new_btn.remove();
-        new_li.remove();
+ulObj.addEventListener("click", function(event){ 
+    let clkObj = event.target; 
+    if( clkObj.nodeName=='BUTTON' ){ 
+        let parentObj = clkObj.parentElement;  
+        let pObj = parentObj.querySelector("p");
+        let remv_task = pObj.innerText;
+        parentObj.remove(); 
         alert(`Removed ${remv_task} from To-Do-List !!`)
-   } );
-   ipObj.value = "";
-   alert(`Added ${new_task} into To-Do-List !!`);
+    }
 });
 
